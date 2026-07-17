@@ -1,11 +1,14 @@
 import express from 'express'
 import cors from 'cors'
 const app = express()
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 import connectDb from './database/mogodb.js'
 import router from './routes/userRoute.js'
 
-const port = 4000
+// const port = 4000
 
 
 app.use(cors({
@@ -21,6 +24,6 @@ app.use(router)
 connectDb()
 
 
-app.listen(port, ()=>{
-    console.log('server is running on port', port)
+app.listen(process.env.PORT, ()=>{
+    console.log('server is running on port')
 })
