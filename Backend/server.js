@@ -24,6 +24,10 @@ app.use(router)
 connectDb()
 
 
+app.get('/hello', (req,res)=>{
+    res.send('<h1>hii</h1>')
+})
+
 app.listen(process.env.PORT, ()=>{
     console.log('server is running on port')
 })
